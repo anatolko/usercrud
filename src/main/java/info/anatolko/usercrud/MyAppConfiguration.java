@@ -13,6 +13,5 @@ public class MyAppConfiguration  extends RepositoryRestMvcConfiguration {
     @Override
     protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(User.class);
-
     }
 }

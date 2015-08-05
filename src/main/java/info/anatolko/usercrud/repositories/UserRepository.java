@@ -2,6 +2,7 @@ package info.anatolko.usercrud.repositories;
 
 import info.anatolko.usercrud.entity.User;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 /**
@@ -11,5 +12,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * Класс предоставляет rest-сервис для работы с сущностями User.
  */
 @RepositoryRestResource(path = "user")
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 }

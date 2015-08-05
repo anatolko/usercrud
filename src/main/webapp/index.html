@@ -104,18 +104,29 @@
                                             <th style="width:10%;"
                                                 class="isAdmin"
                                                 custom-sort
-                                                order="'isAdmin'"
+                                                order="'admin'"
                                                 sort="sort">Права</th>
                                             <th style="width:2%;"></th>
                                         </tr>
                                     </thead>
                                      <tfoot>
                                         <tr>
-                                            <td colspan="7" style="text-align: center;"> <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination></td>
+                                            <td colspan="7" style="text-align: center;">
+                                                <pagination boundary-links="true"
+                                                            total-items="totalItems"
+                                                            num-pages="numPages"
+                                                            items-per-page = "numPerPage"
+                                                            ng-model="currentPage"
+                                                            class="pagination-sm"
+                                                            previous-text="&lsaquo;"
+                                                            next-text="&rsaquo;"
+                                                            first-text="&laquo;"
+                                                            last-text="&raquo;"></pagination>
+                                            </td>
                                         </tr>
                                      </tfoot>
                                     <tbody>
-                                        <tr ng-repeat="user in filteredUsers | filter:query ">
+                                        <tr ng-repeat="user in users | filter:query ">
                                             <td>
                                                 <input type="checkbox"
                                                        ng-model="user.isSelected"
@@ -216,7 +227,6 @@
         <script src="libs/angular-resource/angular-resource.min.js"></script>
         <script src="libs/jquery/dist/jquery.min.js"></script>
         <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script data-require="ng-table@*" data-semver="0.3.1" src="http://bazalt-cms.com/assets/ng-table/0.3.1/ng-table.js"></script>
         <script data-require="angular-ui-bootstrap@0.3.0" data-semver="0.3.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.3.0.min.js"></script>
         <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
         <!-- app -->
